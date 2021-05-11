@@ -40,7 +40,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postinstall": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
