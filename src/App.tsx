@@ -1,4 +1,4 @@
-import { useState, ReactElement } from 'react';
+import { useState } from 'react';
 import Modal from 'react-modal';
 import { ThemeProvider } from 'styled-components';
 import { Dashboard } from './components/Dashboard';
@@ -10,7 +10,7 @@ import theme from './styles/theme';
 
 Modal.setAppElement('#root');
 
-export function App(): ReactElement {
+export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] =
     useState(false);
 
