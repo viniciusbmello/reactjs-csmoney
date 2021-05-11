@@ -16,7 +16,7 @@ export function Header({
           <h1>CS Money</h1>
         </div>
         <button type="button" onClick={onOpenNewTransactionModal}>
-          Nova Transação
+          New Transaction
         </button>
       </Content>
     </Container>

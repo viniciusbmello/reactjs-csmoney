@@ -12,19 +12,19 @@ createServer({
       transactions: [
         {
           id: 1,
-          title: 'Freelance BossaBox',
+          title: 'Freelance RocketSeat',
           type: 'deposit',
-          category: 'Desenvolvimento',
+          category: 'Dev',
           amount: 2000,
-          createdAt: new Date(Date.now() - Math.random() * 1000000),
+          createdAt: new Date(Date.now() - Math.random() * 10 ** 9),
         },
         {
           id: 2,
-          title: 'Aluguel',
+          title: 'House Rent',
           type: 'withdraw',
-          category: 'Casa',
-          amount: 800,
-          createdAt: new Date(Date.now() - Math.random() * 1000000),
+          category: 'Bills',
+          amount: 900,
+          createdAt: new Date(Date.now() - Math.random() * 10 ** 9),
         },
       ],
     });

@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { Dashboard } from './components/Dashboard';
 import { Header } from './components/Header';
 import { NewTransactionModal } from './components/NewTransactionModal';
+import { TransactionsProvider } from './hooks/useTransactions';
 import { GlobalStyle } from './styles/global';
 import theme from './styles/theme';
 
@@ -22,14 +23,16 @@ export function App(): React.ReactElement {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
-      <Dashboard />
-      <NewTransactionModal
-        isOpen={isNewTransactionModalOpen}
-        onRequestClose={handleCloseNewTransactionModal}
-      />
-      <GlobalStyle />
-    </ThemeProvider>
+    <TransactionsProvider>
+      <ThemeProvider theme={theme}>
+        <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
+        <Dashboard />
+        <NewTransactionModal
+          isOpen={isNewTransactionModalOpen}
+          onRequestClose={handleCloseNewTransactionModal}
+        />
+        <GlobalStyle />
+      </ThemeProvider>
+    </TransactionsProvider>
   );
 }

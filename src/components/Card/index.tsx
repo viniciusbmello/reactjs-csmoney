@@ -10,9 +10,9 @@ interface ICard {
 
 function renderSwitch(param: string): string {
   switch (param) {
-    case 'Entradas':
+    case 'income':
       return incomeSvg;
-    case 'Total':
+    case 'total':
       return totalSvg;
     default:
       return outcomeSvg;
@@ -27,7 +27,12 @@ export function Card(props: ICard): React.ReactElement<ICard> {
         <h4>{title}:</h4>
         <img src={renderSwitch(title)} alt="Entradas" />
       </header>
-      <p>R$ {value}</p>
+      <p className={title}>
+        {new Intl.NumberFormat('pt-BR', {
+          style: 'currency',
+          currency: 'brl',
+        }).format(value)}
+      </p>
     </Container>
   );
 }

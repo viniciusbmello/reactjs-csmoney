@@ -4,7 +4,7 @@ export const Container = styled.div`
   background: ${props => props.theme.colors.shape};
   padding: 2.4rem;
   border-radius: 0.5rem;
-  color: var(--text-title);
+  color: ${props => props.theme.colors.textTitle};
 
   header {
     display: flex;
@@ -13,12 +13,21 @@ export const Container = styled.div`
 
     h4 {
       font-weight: 400;
+      text-transform: capitalize;
     }
   }
 
   p {
     margin-top: 1.6rem;
     font-size: 3.2rem;
+  }
+
+  p.income {
+    color: ${props => props.theme.colors.green};
+  }
+
+  p.outcome {
+    color: ${props => props.theme.colors.red};
   }
 
   &:last-child {
