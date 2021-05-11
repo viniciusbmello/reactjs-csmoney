@@ -1,12 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: var(--shape);
+  background: ${props => props.theme.colors.shape};
   padding: 2.4rem;
   border-radius: 0.5rem;
   color: var(--text-title);
 
-  header { 
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,14 +22,14 @@ export const Container = styled.div`
   }
 
   &:last-child {
-    color: var(--shape);
+    color: ${props => props.theme.colors.shape};
   }
 
   &:last-child.green {
-    background: var(--green);
+    background: ${props => props.theme.colors.green};
   }
 
   &:last-child.red {
-    background: var(--red);
+    background: ${props => props.theme.colors.red};
   }
 `;

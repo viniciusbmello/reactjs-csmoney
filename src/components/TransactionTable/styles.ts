@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 5.6rem;
@@ -7,8 +7,8 @@ export const Container = styled.div`
     width: 100%;
     border-spacing: 0 0.5rem;
 
-    th { 
-      color: var(--text-body);
+    th {
+      color: ${props => props.theme.colors.textBody};
       font-weight: 400;
       padding: 1.6rem 3.2rem;
       text-align: left;
@@ -17,27 +17,27 @@ export const Container = styled.div`
     tr {
       td {
         border: 0;
-        background: var(--shape);
+        background: ${props => props.theme.colors.shape};
         padding: 1.6rem 3.2rem;
         color: var(--text-body);
         border-radius: 0.5rem;
 
         &:first-child {
-          color: var(--text-title);
+          color: ${props => props.theme.colors.textTitle};
         }
       }
 
       &.withdraw {
         td.value {
-          color: var(--red)
+          color: ${props => props.theme.colors.red};
         }
       }
 
       &.deposit {
         td.value {
-          color: var(--green)
+          color: ${props => props.theme.colors.green};
         }
       }
     }
   }
-`
+`;

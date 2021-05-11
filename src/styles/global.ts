@@ -1,19 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle`
-  :root {
-    --max-width: 1120px;
-
-    --green: #33cc95;
-    --red: #e52e4d;
-    --primary: #5429cc;
-    --primary-light: #6933ff;
-    --text-title: #363f5f;
-    --text-body: #969cb3;
-    --background: #f0f2f5;
-    --shape: #ffffff;
-  }
-  
+export const GlobalStyle = createGlobalStyle`  
   * {
     margin: 0;
     padding: 0;
@@ -40,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body { 
-    background: var(--background);
+    background: ${props => props.theme.colors.background};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -57,10 +44,47 @@ export const GlobalStyle = createGlobalStyle`
   button { 
     cursor: pointer;
     border: 0;
+    background: transparent;
   }
 
   [disabled] {
     opacity: 0.6;
     cursor: not-allowed;
   }
-`
+
+  .react-modal-overlay {
+    background: rgba(0, 0, 0, .5);
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .react-modal-content {
+    background: ${props => props.theme.colors.background};
+
+    width: 100%;
+    max-width: 58rem;
+
+    position: relative;
+    padding: 4.8rem;
+    border-radius: 0.5rem;
+  }
+
+  .react-modal-close {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.4rem;
+
+    transition: filter 0.1s;
+
+    &:hover {
+      filter: brightness(50%);
+    }
+  }
+`;
