@@ -1,4 +1,4 @@
-import { useContext, createContext, useEffect, useState } from 'react';
+import { useContext, createContext, useEffect, useState, ReactNode, ReactElement } from 'react';
 import { api } from '../services/api';
 
 interface ITransaction {
@@ -23,12 +23,12 @@ const TransactionsContext = createContext<ITransactionContextData>(
 );
 
 interface AuxProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function TransactionsProvider({
   children,
-}: AuxProps): React.ReactElement {
+}: AuxProps): ReactElement {
   const [transactions, setTransactions] = useState<ITransaction[]>([]);
 
   useEffect(() => {

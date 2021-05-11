@@ -1,7 +1,8 @@
+import { ReactElement } from 'react';
 import { useTransactions } from '../../hooks/useTransactions';
 import { Container } from './styles';
 
-export function TransactionTable(): React.ReactElement {
+export function TransactionTable(): ReactElement {
   const { transactions } = useTransactions();
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { ReactElement, useState, FormEvent } from 'react';
 import Modal from 'react-modal';
 import { useTransactions } from '../../hooks/useTransactions';
 import closeSvg from '../../assets/close.svg';
@@ -14,7 +14,7 @@ interface INewTransactionModal {
 export function NewTransactionModal({
   isOpen,
   onRequestClose,
-}: INewTransactionModal): React.ReactElement<INewTransactionModal> {
+}: INewTransactionModal): ReactElement<INewTransactionModal> {
   const { createTransaction } = useTransactions();
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState(0);
@@ -22,7 +22,7 @@ export function NewTransactionModal({
   const [category, setCategory] = useState('');
 
   async function handleCreateNewTransaction(
-    event: React.FormEvent<HTMLFormElement>,
+    event: FormEvent<HTMLFormElement>,
   ): Promise<void> {
     event.preventDefault();
     try {

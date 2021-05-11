@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import incomeSvg from '../../assets/income.svg';
 import outcomeSvg from '../../assets/outcome.svg';
 import totalSvg from '../../assets/total.svg';
@@ -19,7 +20,7 @@ function renderSwitch(param: string): string {
   }
 }
 
-export function Card(props: ICard): React.ReactElement<ICard> {
+export function Card(props: ICard): ReactElement<ICard> {
   const { title, value } = props;
   return (
     <Container className={value < 0 ? 'red' : 'green'}>

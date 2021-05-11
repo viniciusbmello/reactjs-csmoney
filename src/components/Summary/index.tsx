@@ -1,8 +1,9 @@
+import { ReactElement } from 'react';
 import { Container } from './styles';
 import { Card } from '../Card';
 import { useTransactions } from '../../hooks/useTransactions';
 
-export function Summary(): React.ReactElement {
+export function Summary(): ReactElement {
   const { transactions } = useTransactions();
 
   const summary = transactions.reduce(

@@ -1,5 +1,6 @@
 import { Container, Content } from './styles';
 import logoSvg from '../../assets/logo.svg';
+import { ReactElement } from 'react';
 
 interface IHeader {
   onOpenNewTransactionModal: () => void;
@@ -7,7 +8,7 @@ interface IHeader {
 
 export function Header({
   onOpenNewTransactionModal,
-}: IHeader): React.ReactElement<IHeader> {
+}: IHeader): ReactElement<IHeader> {
   return (
     <Container>
       <Content>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { createServer, Model } from 'miragejs';
 import { App } from './App';
@@ -40,8 +40,8 @@ createServer({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
   document.getElementById('root'),
 );
