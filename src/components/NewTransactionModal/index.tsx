@@ -56,7 +56,7 @@ export function NewTransactionModal({
               }}
             >
               <img src={outcomeSvg} alt="Saída" />
-              <span>Saída</span>
+              <span>Retirada</span>
             </RadioBox>
           </TransactionTypeContainer>
           <input type="text" placeholder="Categoria" />
