@@ -1,4 +1,11 @@
-import { useContext, createContext, useEffect, useState, ReactNode, ReactElement } from 'react';
+import {
+  useContext,
+  createContext,
+  useEffect,
+  useState,
+  ReactNode,
+  ReactElement,
+} from 'react';
 import { api } from '../services/api';
 
 interface ITransaction {
@@ -11,6 +18,7 @@ interface ITransaction {
 }
 
 type TransactionInput = Omit<ITransaction, 'id' | 'createdAt'>;
+export type TransactionTableRow = Omit<ITransaction, 'id'>;
 
 interface ITransactionContextData {
   transactions: ITransaction[];
@@ -26,15 +34,11 @@ interface AuxProps {
   children: ReactNode;
 }
 
-export function TransactionsProvider({
-  children,
-}: AuxProps): ReactElement {
+export function TransactionsProvider({ children }: AuxProps): ReactElement {
   const [transactions, setTransactions] = useState<ITransaction[]>([]);
 
   useEffect(() => {
-    api
-      .get('transactions')
-      .then(response => setTransactions(response.data));
+    api.get('transactions').then(response => setTransactions(response.data));
   }, []);
 
   async function createTransaction(

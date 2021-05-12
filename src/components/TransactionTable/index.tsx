@@ -1,12 +1,17 @@
 import { ReactElement } from 'react';
 import { useTransactions } from '../../hooks/useTransactions';
 import { Container } from './styles';
+import { TransactionRow } from '../TransactionRow';
 
 export function TransactionTable(): ReactElement {
   const { transactions } = useTransactions();
 
   return (
     <Container>
+      <div className="tbody-header-mobile">
+        <h2>Listagem</h2>
+        <p>{transactions.length} Items</p>
+      </div>
       <table>
         <thead>
           <tr>
@@ -18,21 +23,14 @@ export function TransactionTable(): ReactElement {
         </thead>
         <tbody>
           {transactions.map(transaction => (
-            <tr className={transaction.type} key={transaction.id}>
-              <td>{transaction.title}</td>
-              <td className="value">
-                {new Intl.NumberFormat('pt-BR', {
-                  style: 'currency',
-                  currency: 'brl',
-                }).format(transaction.amount)}
-              </td>
-              <td>{transaction.category}</td>
-              <td>
-                {new Intl.DateTimeFormat('pt-BR').format(
-                  new Date(transaction.createdAt),
-                )}
-              </td>
-            </tr>
+            <TransactionRow
+              key={transaction.id}
+              title={transaction.title}
+              category={transaction.category}
+              createdAt={transaction.createdAt}
+              type={transaction.type}
+              amount={transaction.amount}
+            />
           ))}
         </tbody>
       </table>

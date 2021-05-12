@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin-top: 5.6rem;
 
+  .tbody-header-mobile {
+    display: none;
+  }
+
   table {
     width: 100%;
     border-spacing: 0 0.5rem;
@@ -13,30 +17,32 @@ export const Container = styled.div`
       padding: 1.6rem 3.2rem;
       text-align: left;
     }
+  }
 
-    tr {
-      td {
-        border: 0;
-        background: ${props => props.theme.colors.shape};
-        padding: 1.6rem 3.2rem;
-        color: var(--text-body);
-        border-radius: 0.5rem;
+  @media (max-width: 720px) {
+    margin-top: 3.2rem;
 
-        &:first-child {
-          color: ${props => props.theme.colors.textTitle};
-        }
+    .tbody-header-mobile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.6rem;
+
+      h2 {
+        font-weight: 400;
+        color: ${props => props.theme.colors.textTitle};
       }
 
-      &.withdraw {
-        td.value {
-          color: ${props => props.theme.colors.red};
-        }
+      p {
+        color: ${props => props.theme.colors.textBody};
       }
+    }
 
-      &.deposit {
-        td.value {
-          color: ${props => props.theme.colors.green};
-        }
+    table {
+      border-spacing: 0 1rem;
+
+      thead {
+        display: none;
       }
     }
   }

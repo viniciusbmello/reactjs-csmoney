@@ -6,6 +6,26 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   color: ${props => props.theme.colors.textTitle};
 
+  @media (max-width: 720px) {
+    width: 80%;
+    flex: 0 0 auto;
+
+    &:first-child {
+      margin-left: 3.2rem;
+    }
+
+    &:last-child {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: '';
+        right: -3.2rem;
+        width: 3.2rem;
+        height: 100%;
+      }
+    }
+  }
+
   header {
     display: flex;
     align-items: center;

@@ -8,7 +8,8 @@ export const Container = styled.header`
     text-align: right;
     padding-top: 1rem;
     padding-right: 1rem;
-    color: ${props => props.theme.colors.shape};
+    color: ${props => props.theme.colors.textBody};
+    font-weight: 400;
   }
 `;
 
@@ -16,7 +17,7 @@ export const Content = styled.div`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
 
-  padding: 3rem 1.6rem 12rem;
+  padding: 3rem 3.2rem 12rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +30,10 @@ export const Content = styled.div`
       color: ${props => props.theme.colors.shape};
       padding-left: 1.6rem;
       user-select: none;
+
+      @media (max-width: 720px) {
+        font-size: 2.4rem;
+      }
     }
   }
 
@@ -44,6 +49,10 @@ export const Content = styled.div`
     &:hover {
       background-color: ${props =>
         lighten(0.05, props.theme.colors.primaryLight)};
+    }
+
+    @media (max-width: 720px) {
+      padding: 0 1.6rem;
     }
   }
 `;
