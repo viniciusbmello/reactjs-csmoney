@@ -56,14 +56,16 @@ export function NewTransactionModal({
           <input
             type="text"
             placeholder="Title"
+            required 
             value={title}
-            onChange={event => setTitle(event.target.value)}
+            onChange={e => setTitle(e.target.value.replace(/[^a-z0-9. -]/gi, ''))}
           />
           <input
-            type="number"
+            type="text"
             placeholder="Amount"
+            required 
             value={amount}
-            onChange={event => setAmount(Number(event.target.value))}
+            onChange={e => setAmount(Number(e.target.value.replace(/\D/g, '')))}
           />
           <TransactionTypeContainer>
             <RadioBox
@@ -92,8 +94,9 @@ export function NewTransactionModal({
           <input
             type="text"
             placeholder="Category"
+            required 
             value={category}
-            onChange={event => setCategory(event.target.value)}
+            onChange={e => setCategory(e.target.value.replace(/[^a-z0-9. -]/gi, ''))}
           />
           <button type="submit">Register</button>
         </fieldset>
