@@ -3,6 +3,13 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   background: ${props => props.theme.colors.primary};
+
+  h6 {
+    text-align: right;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    color: ${props => props.theme.colors.shape};
+  }
 `;
 
 export const Content = styled.div`

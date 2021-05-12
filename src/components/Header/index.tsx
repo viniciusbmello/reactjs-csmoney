@@ -11,6 +11,7 @@ export function Header({
 }: IHeader): ReactElement<IHeader> {
   return (
     <Container>
+    <h6>CreatedBy viniciusbmello</h6>
       <Content>
         <div className="logo">
           <img src={logoSvg} alt="SC Money" />
