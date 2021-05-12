@@ -61,7 +61,7 @@ export function NewTransactionModal({
             onChange={e => setTitle(e.target.value.replace(/[^a-z0-9. -]/gi, ''))}
           />
           <input
-            type="text"
+            type="number"
             placeholder="Amount"
             required 
             value={amount}
