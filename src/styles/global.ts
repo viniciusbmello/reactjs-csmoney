@@ -18,8 +18,12 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 50%;
     }
 
-    @media (max-width: 400px) {
+    @media (max-width: 380px) {
       font-size: 43.75%;
+    }
+
+    @media (max-width: 300px) {
+      font-size: 37.50%;
     }
   }
 
@@ -68,6 +72,10 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 720px) {
+      align-items: flex-end;
+    }
   }
   .react-modal-content {
     background: ${props => props.theme.colors.background};
@@ -78,6 +86,11 @@ export const GlobalStyle = createGlobalStyle`
     position: relative;
     padding: 4.8rem;
     border-radius: 0.5rem;
+
+    @media (max-width: 720px) {  
+      max-width: 100%;  
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
   }
 
   .react-modal-close {
