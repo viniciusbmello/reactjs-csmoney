@@ -23,7 +23,7 @@ This project was developed with the following technologies:
 - [Typescript](https://www.typescriptlang.org/)
 - [Context API](https://pt-br.reactjs.org/docs/context.html)
 - [Axios](https://github.com/axios/axios)
-- [MirageJS](https://miragejs.com/)
+- [JSON-Server](https://github.com/typicode/json-server)
 - [Styled-Components](https://styled-components.com/)
 - [Polished](https://polished.js.org/)
 - [ESLint](https://eslint.org/)

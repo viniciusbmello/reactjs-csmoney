@@ -16,7 +16,7 @@ export const Content = styled.div`
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
 
-  padding: 4.8rem 1.6rem 12rem;
+  padding: 3rem 1.6rem 12rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
