@@ -34,7 +34,7 @@ export function TransactionsProvider({
   useEffect(() => {
     api
       .get('transactions')
-      .then(response => setTransactions(response.data.transactions));
+      .then(response => setTransactions(response.data));
   }, []);
 
   async function createTransaction(
