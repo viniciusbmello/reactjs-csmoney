@@ -44,7 +44,7 @@ export function TransactionsProvider({
       ...transactionInput,
       createdAt: new Date(),
     });
-    setTransactions([...transactions, response.data.transaction]);
+    setTransactions([...transactions, response.data]);
   }
 
   return (
